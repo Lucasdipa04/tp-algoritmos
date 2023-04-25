@@ -1,63 +1,4 @@
-user = None
-pasw = None
-salida = 0
-intent = 0
-while user != "admin@shopping.com" and intent < 3:
-
-    user = input("ingresa correo\n\n")
-
-    if user != "admin@shopping.com":
-        intent += 1
-    if intent == 3:
-        print("andate flaco")
-
-
-while pasw != "12345" and intent < 3:
-
-    pasw = input("ingresa contraseña\n\n")
-
-    if pasw != "12345":
-        intent += 1
-    if intent == 3:
-        print("andate flacovich")
-
-
-class local:
-    nombre = ""
-    ubicacion = ""
-    rubro = ""
-
-    def __init__(self, nombre, ubicacion, rubro):
-        self.nombre = nombre
-        self.ubicacion = ubicacion
-        self.rubro = rubro
-
-locales = []
-rubros_validos = {
-    "indumentaria": 0,
-    "perfumería": 0,
-    "gastronomía": 0
-}
-
-
-
-while user == "admin@shopping.com" and pasw == "12345" and salida == 0:
-    print("Menú de opciones:")
-    print("1. Gestión de locales")
-    print("2. Crear cuentas de dueños de locales")
-    print("3. Aprobar / Denegar solicituda de descuento")
-    print("4. Gestión de novedades")
-    print("5. Reporte de utilización de descuentos")
-    print("0. Salir del sistema")
-    option = int(input("Que desea hacer?\n\n"))
-
-
-    if option == 1:
-
-        print("1. Crear locales")
-        print("")
-        
-        if len(locales) < 10:
+if len(locales) < 10:
             nombre = input("\nIngrese el nombre del nuevo local: ")
             ubicacion = input("Ingresa la ubicación del local: ")
             rubro = input("A que rubro pertenece el local? (indumentaria, perfumería o gastronomía. Recuerde usar los acentos.)")
@@ -99,18 +40,3 @@ while user == "admin@shopping.com" and pasw == "12345" and salida == 0:
             print("Ha seleccionado el local: {}\nUbicación: {}\nRubro: {}".format(local_seleccionado.nombre, local_seleccionado.ubicacion, local_seleccionado.rubro))
             
             vuelta = input("Presiona Enter para continuar")
-    
-    
-    elif option == 3 or 4 or 5:
-        print("En construcción...")
-        continue
-    
-    
-    elif option == 0:
-        print("Gracias por utilizar nuestro sistema")
-        salida = 1
-
-    else:
-        option != 0 or 1 or 2 or 3 or 4 or 5
-        print("esa opcion no existe")
-        continue
