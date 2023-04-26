@@ -3,12 +3,12 @@ nombreUsuario = ""
 claveUsuario = ""
 intentos = 0
 
-print("Bienvenido")
+print("Bienvenido\n\n")
 
 #aca hasta que no ingrese "admin@shopping.com" no podra seguir y si se equivoca 3 veces el programa finalizara
 while nombreUsuario != "admin@shopping.com" and intentos < 3:
 
-    nombreUsuario = input("\nIngrese su correo\n\n")
+    nombreUsuario = input("\ningresa correo\n\n")
 
     if nombreUsuario != "admin@shopping.com":
         intentos += 1
@@ -19,7 +19,7 @@ while nombreUsuario != "admin@shopping.com" and intentos < 3:
 #(se arrastran los errores que haya tenido si no ingreso bien el correo)
 while claveUsuario != "12345" and intentos < 3:
 
-    claveUsuario = input("\nIngrese su contraseña\n\n")
+    claveUsuario = input("\ningresa contraseña\n\n")
 
     if claveUsuario != "12345":
         intentos += 1
@@ -60,8 +60,6 @@ while nombreUsuario == "admin@shopping.com" and salida == 0:
 
     #le pregunte al usuario que opcion elegia y si ingresa "1" le saldra otro menú con más opciones
     if option == 1:
-
-        #declaro la variable que me permita salir del while para volver al menú principal
         secondOption = ""
         while secondOption != "d":
             print("a) Crear locales")
@@ -70,7 +68,6 @@ while nombreUsuario == "admin@shopping.com" and salida == 0:
             print("d) volver")
 
             secondOption = input("Que desea hacer?\n\n")
-            opciones_validas = ["a","b","c","d"]
 
             #le pregunte al usuario que opcion elegia y si ingresa "a" y la cantidad de locales creados es menor a 10 le pedire
             #que ingrese los valores de los atributos del local que quiere crear
@@ -106,12 +103,13 @@ while nombreUsuario == "admin@shopping.com" and salida == 0:
                 else:
                     print("Se ha alcanzado el número maximo de locales (10)")
             
-            elif secondOption == "b" or secondOption == "c":
+            elif secondOption == "b" or "c":
                 print("\nEn construcción...")
-            
-            elif secondOption not in opciones_validas:
-                print("La opcion ingresada no es valida")
-            
+                
+
+            elif secondOption == "d":
+                continue
+    
     elif option == 0:
         print("\nGracias por utilizar nuestro sistema")
         salida = 1
