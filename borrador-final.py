@@ -56,6 +56,8 @@ while nombreUsuario == "admin@shopping.com" and salida == 0:
     print("5. Reporte de utilización de descuentos")
     print("0. Salir del sistema")
     option = int(input("Que desea hacer?\n\n"))
+    opciones_validas = [1,2,3,4,5,0]
+    construc = [2,3,4,5]
 
 
     #le pregunte al usuario que opcion elegia y si ingresa "1" le saldra otro menú con más opciones
@@ -70,7 +72,7 @@ while nombreUsuario == "admin@shopping.com" and salida == 0:
             print("d) volver")
 
             secondOption = input("Que desea hacer?\n\n")
-            opciones_validas = ["a","b","c","d"]
+            opciones2_validas = ["a","b","c","d"]
 
             #le pregunte al usuario que opcion elegia y si ingresa "a" y la cantidad de locales creados es menor a 10 le pedire
             #que ingrese los valores de los atributos del local que quiere crear
@@ -109,17 +111,17 @@ while nombreUsuario == "admin@shopping.com" and salida == 0:
             elif secondOption == "b" or secondOption == "c":
                 print("\nEn construcción...")
             
-            elif secondOption not in opciones_validas:
+            elif secondOption not in opciones2_validas:
                 print("La opcion ingresada no es valida")
             
     elif option == 0:
         print("\nGracias por utilizar nuestro sistema")
         salida = 1
 
-    elif option == 2 or 3 or 4 or 5:
+    elif option in construc:
         print("\nEn construcción...")
 
     else:
-        option != 0 or 1 or 2 or 3 or 4 or 5
+        option not in opciones_validas
         print("\nEsa opcion no existe")
         continue

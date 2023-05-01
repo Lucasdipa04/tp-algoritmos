@@ -38,8 +38,8 @@ class local:
         self.rubroLocal = rubroLocal
 
 #Cree una lista para los locales y un diccionario para cuando tenga que saber cual es el rubro mayor
-locales = []
-rubros_validos = {
+locales = []                #lista
+rubros_validos = {          #diccionario
     "indumentaria": 0,
     "perfumería": 0,
     "gastronomía": 0
@@ -47,7 +47,7 @@ rubros_validos = {
 #mientras se cumplan las condiciones estipuladas el sistema seguida funcionando y al declarar una variable con 0 si luego la cambio
 #se dejaran de cumplir todas las variables y asi podremos finalizar el programa
 salida = 0
-while nombreUsuario == "admin@shopping.com" and salida == 0:
+while nombreUsuario == "admin@shopping.com" and claveUsuario == "12345" and salida == 0:
     print("\nMenú de opciones:")
     print("1. Gestión de locales")
     print("2. Crear cuentas de dueños de locales")
@@ -103,13 +103,9 @@ while nombreUsuario == "admin@shopping.com" and salida == 0:
                 else:
                     print("Se ha alcanzado el número maximo de locales (10)")
             
-            elif secondOption == "b" or "c":
+            elif secondOption == "b" or secondOption == "c":
                 print("\nEn construcción...")
-                
-
-            elif secondOption == "d":
-                continue
-    
+           
     elif option == 0:
         print("\nGracias por utilizar nuestro sistema")
         salida = 1
